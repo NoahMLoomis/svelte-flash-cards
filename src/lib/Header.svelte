@@ -1,11 +1,9 @@
-<script>
+<script lang="ts">
+	// TODO logout
 	import { page } from '$app/stores';
 	import logo from '$lib/images/logo.png';
-	import { supabaseClient } from '$lib/db';
 
-	async function handleLogout() {
-		await supabaseClient.auth.signOut();
-	}
+	export let data: PageData;
 </script>
 
 <header class="flex items-center justify-between bg-transparent">

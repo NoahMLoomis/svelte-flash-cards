@@ -8,10 +8,8 @@ declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
-			event: {
-				sb: TypedSupabaseClient
-				session: Session | null
-			}
+			sb: TypedSupabaseClient
+			session: Session | null
 		}
 		interface PageData {
 			session: import("@supabase/supabase-js").Session | null
