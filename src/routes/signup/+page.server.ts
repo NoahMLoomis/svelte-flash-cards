@@ -1,19 +1,23 @@
 import { AuthApiError } from "@supabase/supabase-js";
 import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
-export const prerender = true
+
+export const ssr = true
+export const prerender = false
 
 export const actions: Actions = {
     signup: async ({ request, locals }) => {
-        const form = await request.formData();
-        const { data, error: err } = await locals.sb.auth.signUp({
-            email: form.get("email") as string,
-            password: form.get("password") as string,
+        const body = Object.fromEntries(await request.formData())
+
+        const { error: err } = await locals.sb.auth.signUp({
+            email: body.email as string,
+            password: body.password as string,
         })
         if (err) {
-            if (err instanceof AuthApiError && err.status === 400) {
+            if (err instanceof AuthApiError) {
                 return fail(400, {
-                    error: "Invalid emial or password"
+                    email: body.email as string,
+                    error: "Invalid email or password"
                 })
             }
             return fail(500, {
@@ -21,7 +25,7 @@ export const actions: Actions = {
             })
         }
 
-        throw redirect(302, "/")
+        throw redirect(302, "/quiz")
 
     }
 };

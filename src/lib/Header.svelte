@@ -1,9 +1,6 @@
 <script lang="ts">
-	// TODO logout
 	import { page } from '$app/stores';
 	import logo from '$lib/images/logo.png';
-
-	export let data: PageData;
 </script>
 
 <header class="flex items-center justify-between bg-transparent">
@@ -23,10 +20,12 @@
 				>Login</a
 			>
 		{:else}
-			<button
-				class="px-3 py-1 text-sm font-extrabold bg-white rounded-lg text-center hover:no-underline shadow-lg"
-				on:click={handleLogout}>Logout</button
-			>
+			<form method="POST" action="/logout">
+				<button
+					class="px-3 py-1 text-sm font-extrabold bg-white rounded-lg text-center hover:no-underline shadow-lg"
+					>Logout</button
+				>
+			</form>
 		{/if}
 	</div>
 </header>

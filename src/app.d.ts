@@ -5,7 +5,7 @@ import type { Session } from '@supabase/supabase-js';
 
 // for information about these interfaces
 declare global {
-	namespace App {
+	declare namespace App {
 		// interface Error {}
 		interface Locals {
 			sb: TypedSupabaseClient
@@ -15,11 +15,11 @@ declare global {
 			session: import("@supabase/supabase-js").Session | null
 		}
 		// interface Platform {}
-		interface Supabase {
-			// Use the path to where you generated the types using the Supbase CLI.
-			Database: import('../types/supabase').Database;
-			SchemaName: 'public'
-		}
+		// interface Supabase {
+		// 	// Use the path to where you generated the types using the Supbase CLI.
+		// 	Database: import('../types/supabase').Database;
+		// 	SchemaName: 'public'
+		// }
 
 		// interface Locals {}
 		interface PageData {
@@ -27,5 +27,108 @@ declare global {
 		}
 	}
 }
+
+export type Json =
+	| string
+	| number
+	| boolean
+	| null
+	| { [key: string]: Json }
+	| Json[]
+
+export interface Database {
+	public: {
+		Tables: {
+			flashcard: {
+				Row: {
+					answer: string
+					created_at: string | null
+					hint: string | null
+					id: number
+					question: string
+					quiz: number
+					rating: number | null
+				}
+				Insert: {
+					answer: string
+					created_at?: string | null
+					hint?: string | null
+					id?: number
+					question: string
+					quiz: number
+					rating?: number | null
+				}
+				Update: {
+					answer?: string
+					created_at?: string | null
+					hint?: string | null
+					id?: number
+					question?: string
+					quiz?: number
+					rating?: number | null
+				}
+			}
+			quiz: {
+				Row: {
+					created_at: string | null
+					description: string | null
+					id: number
+					quiz: string
+					subject: number
+				}
+				Insert: {
+					created_at?: string | null
+					description?: string | null
+					id?: number
+					quiz: string
+					subject: number
+				}
+				Update: {
+					created_at?: string | null
+					description?: string | null
+					id?: number
+					quiz?: string
+					subject?: number
+				}
+			}
+			subject: {
+				Row: {
+					created_at: string | null
+					description: string | null
+					id: number
+					subject: string
+					user_id: string
+				}
+				Insert: {
+					created_at?: string | null
+					description?: string | null
+					id?: number
+					subject?: string
+					user_id: string
+				}
+				Update: {
+					created_at?: string | null
+					description?: string | null
+					id?: number
+					subject?: string
+					user_id?: string
+				}
+			}
+		}
+		Views: {
+			[_ in never]: never
+		}
+		Functions: {
+			[_ in never]: never
+		}
+		Enums: {
+			[_ in never]: never
+		}
+		CompositeTypes: {
+			[_ in never]: never
+		}
+	}
+}
+
 
 export { };

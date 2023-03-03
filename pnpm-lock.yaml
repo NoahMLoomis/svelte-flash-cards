@@ -15,6 +15,7 @@ specifiers:
   prettier-plugin-svelte: ^2.8.1
   svelte: ^3.54.0
   svelte-check: ^3.0.1
+  svelte-headless-table: ^0.17.2
   tailwindcss: ^3.2.7
   tslib: ^2.4.1
   typescript: ^4.9.3
@@ -37,6 +38,7 @@ devDependencies:
   prettier-plugin-svelte: 2.9.0_jrsxveqmsx2uadbqiuq74wlc4u
   svelte: 3.55.1
   svelte-check: 3.0.4_pehl75e5jsy22vp33udjja4soi
+  svelte-headless-table: 0.17.2_svelte@3.55.1
   tailwindcss: 3.2.7_postcss@8.4.21
   tslib: 2.5.0
   typescript: 4.9.5
@@ -1287,6 +1289,16 @@ packages:
       - sugarss
     dev: true
 
+  /svelte-headless-table/0.17.2_svelte@3.55.1:
+    resolution: {integrity: sha512-XYG3PC6HzotIhzeqb+M+HGwtkfIhuRJr2+BgRYYD4xTANEUtlWg6M8tIgQp7fqJf7VKOdhmXQbyvjWKE/VGG3w==}
+    dependencies:
+      svelte-keyed: 1.1.6_svelte@3.55.1
+      svelte-render: 1.6.0
+      svelte-subscribe: 1.0.5
+    transitivePeerDependencies:
+      - svelte
+    dev: true
+
   /svelte-hmr/0.15.1_svelte@3.55.1:
     resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -1294,6 +1306,14 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.55.1
+
+  /svelte-keyed/1.1.6_svelte@3.55.1:
+    resolution: {integrity: sha512-sd/7j3waSpOkeiQqATstlvNySbEpSs49aoaZ/nc09x/iEndnXQ/9Zy5PTD06+C7hlZk8KjZ4bhrktAQ791jWMQ==}
+    peerDependencies:
+      svelte: ^3.49.0
+    dependencies:
+      svelte: 3.55.1
+    dev: true
 
   /svelte-preprocess/5.0.1_k4bhxdknaltjvjwprbm23edr5q:
     resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
@@ -1342,6 +1362,16 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.55.1
       typescript: 4.9.5
+    dev: true
+
+  /svelte-render/1.6.0:
+    resolution: {integrity: sha512-Y6Ea6U768MuhH0xR72pAPnXdSnJ+4yi24YyD/b9Q46yGalQFVxUyan496EELWtQEvgQE9Z2PsFAG8JjvrWcDAg==}
+    dependencies:
+      svelte-subscribe: 1.0.5
+    dev: true
+
+  /svelte-subscribe/1.0.5:
+    resolution: {integrity: sha512-p+vRSBVzR9BQC72mjd2eqCv8zx5euLZQJF7QqAw5d41aKzQVOq90y71/NXch+nDNMjWbRo0CX+brcWYgPryJlw==}
     dev: true
 
   /svelte/3.55.1:
