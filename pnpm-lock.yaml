@@ -13,6 +13,7 @@ specifiers:
   postcss: ^8.4.21
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.8.1
+  svelecte: 4.0.0-alpha.7
   svelte: ^3.54.0
   svelte-check: ^3.0.1
   svelte-headless-table: ^0.17.2
@@ -25,6 +26,7 @@ dependencies:
   '@auth/sveltekit': 0.2.1_4rylcc2rz3gc4fnbb666aauziu
   '@supabase/auth-helpers-sveltekit': 0.8.7_h4fmw4dd6b3xkulak4k3c7hqqu
   '@supabase/supabase-js': 2.8.0
+  svelecte: 4.0.0-alpha.7
 
 devDependencies:
   '@fontsource/fira-mono': 4.5.10
@@ -1262,6 +1264,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  /svelecte/4.0.0-alpha.7:
+    resolution: {integrity: sha512-4gG8XQONjBLHnE1hssjp1Fmaf9mKJIDajXebRJkFSqExcjGGv5RLZsFaUywT4LtOT/nUpbtcZ+2scu1uyauHJg==}
+    dependencies:
+      svelte-tiny-virtual-list: 2.0.5
+    dev: false
+
   /svelte-check/3.0.4_pehl75e5jsy22vp33udjja4soi:
     resolution: {integrity: sha512-feIyBAA5cSIxq4vq6mwGvGQTHy/wBVQbs5b+/VvE21WN8X7nonAuSqwvZv0UDBowzRka3Rh4gmLPH8rPePz3/w==}
     hasBin: true
@@ -1373,6 +1381,10 @@ packages:
   /svelte-subscribe/1.0.5:
     resolution: {integrity: sha512-p+vRSBVzR9BQC72mjd2eqCv8zx5euLZQJF7QqAw5d41aKzQVOq90y71/NXch+nDNMjWbRo0CX+brcWYgPryJlw==}
     dev: true
+
+  /svelte-tiny-virtual-list/2.0.5:
+    resolution: {integrity: sha512-xg9ckb8UeeIme4/5qlwCrl2QNmUZ8SCQYZn3Ji83cUsoASqRNy3KWjpmNmzYvPDqCHSZjruBBsoB7t5hwuzw5g==}
+    dev: false
 
   /svelte/3.55.1:
     resolution: {integrity: sha512-S+87/P0Ve67HxKkEV23iCdAh/SX1xiSfjF1HOglno/YTbSTW7RniICMCofWGdJJbdjw3S+0PfFb1JtGfTXE0oQ==}
